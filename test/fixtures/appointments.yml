@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trainer_id: 1
+  user_id: 1
+  location: MyString
+  date: 2021-06-15
+  time: 2021-06-15 18:42:16
+
+two:
+  trainer_id: 1
+  user_id: 1
+  location: MyString
+  date: 2021-06-15
+  time: 2021-06-15 18:42:16
