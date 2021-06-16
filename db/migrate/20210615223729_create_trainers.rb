@@ -3,7 +3,7 @@ class CreateTrainers < ActiveRecord::Migration[6.1]
     create_table :trainers do |t|
       t.string :name
       t.string :image
-      t.fboolean :booked
+      t.boolean :booked
       t.integer :rating
       t.string :bio
 
