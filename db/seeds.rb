@@ -1,10 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# reset pk sequences 
+
+User.destroy_all
+Trainer.destroy_all
+Appointment.destroy_all
+
+#######################
+
+User.reset_pk_sequence
+Trainer.reset_pk_sequence
+Appointment.reset_pk_sequence
 
 
 
@@ -18,10 +22,17 @@ trainer_1 = Trainer.create(name:"Kevin", image:"", bio:"hello ready and willing 
 trainer_2 = Trainer.create(name:"Ashley", image:"", bio:"hello ready and willing to train", booked:true, rating: 1)
 trainer_3 = Trainer.create(name:"Sam", image:"", bio:"hello ready and willing to train", booked:false, rating: 1)
 
-appointment_1 = Appointment.create(trainer_id: trainer_1.id, user_id:user_1.id, location: "brooklyn", date: DateTime.new(2021, 8, 12))
-appointment_2 = Appointment.create(trainer_id: trainer_2.id, user_id:user_2.id, location: "bushwick", date: DateTime.new(2021, 8, 12))
+appointment_1 = Appointment.create(trainer_id: trainer_1.id, user_id:user_1.id, location: "brooklyn", date: DateTime.new(2021, 8, 29, 22, 35, 0))
+appointment_2 = Appointment.create(trainer_id: trainer_2.id, user_id:user_2.id, location: "bushwick", date: DateTime.new(2021, 8, 29, 22, 35, 0))
 
 
+feedback_1 = Feedback.create(content:"great trainer helped with my cardio", trainer_id: trainer_1.id, user_id: user_1.id)
+feedback_2 = Feedback.create(content:"great training session got a chance to improve my flexibility", trainer_id: trainer_2.id, user_id: user_1.id)
+
+
+
+
+# DateTime.new(2012, 8, 29, 22, 35, 0).change(day: 1)  
 
 # create_table :appointments do |t|
 #     t.integer :trainer_id
