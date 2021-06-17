@@ -9,17 +9,17 @@
 
 
 
-user_1 = User.create(name:"Woodelin", email:"Woodelin@yahoo.com", password:"abc123")
-user_2 = User.create(name:"Kevin", email:"Kevin@yahoo.com", password:"abc123")
-user_3 = User.create(name:"Ashley", email:"Ashley@yahoo.com", password:"abc123")
-user_4 = User.create(name:"Sam", email:"Sam@yahoo.com", password:"abc123")
+user_1 = User.create(name:"Woodelin", email:"Woodelin@yahoo.com", password_digest:"abc123")
+user_2 = User.create(name:"Kevin", email:"Kevin@yahoo.com", password_digest:"abc123")
+user_3 = User.create(name:"Ashley", email:"Ashley@yahoo.com", password_digest:"abc123")
+user_4 = User.create(name:"Sam", email:"Sam@yahoo.com", password_digest:"abc123")
 
 trainer_1 = Trainer.create(name:"Kevin", image:"", bio:"hello ready and willing to train", booked:false, rating: 1)
 trainer_2 = Trainer.create(name:"Ashley", image:"", bio:"hello ready and willing to train", booked:true, rating: 1)
 trainer_3 = Trainer.create(name:"Sam", image:"", bio:"hello ready and willing to train", booked:false, rating: 1)
 
-appointment_1 = Appointment.create(trainer_id: trainer_1.id, user_id:user_1.id, location: "brooklyn", date: DateTime.new 06/15/2021, 13:00)
-appointment_2 = Appointment.create(trainer_id: trainer_2.id, user_id:user_2.id, location: "bushwick", date: DateTime.new 06/15/2021, 19:00)
+appointment_1 = Appointment.create(trainer_id: trainer_1.id, user_id:user_1.id, location: "brooklyn", date: DateTime.new(2021, 8, 12))
+appointment_2 = Appointment.create(trainer_id: trainer_2.id, user_id:user_2.id, location: "bushwick", date: DateTime.new(2021, 8, 12))
 
 
 
