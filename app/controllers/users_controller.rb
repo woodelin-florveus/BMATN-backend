@@ -5,6 +5,8 @@ class UsersController < ApplicationController
         render json: @users
     end
 
+
+
     def show 
         @user = User.find(params[:id])
 
@@ -23,6 +25,7 @@ class UsersController < ApplicationController
     end
 
     # GET / myself
+    #authenticate 
 
     def myself 
         #check users token from the request
@@ -30,6 +33,25 @@ class UsersController < ApplicationController
         # otherwise send an error message
 
         @user = User.first
+        render json: @user
+    end
+
+
+    #authenticate
+    def update 
+        @user = User.first
+
+        @user.update(name: params[:name], email: params[:email])
+
+        render json: @user
+    end
+
+    #authenticate
+    #photo >- user
+
+    def create
+        @user = User.first
+        @user.create( name: params[:name], email: params [:email], profile_image: params[:profile_image])
         render json: @user
     end
 

@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   post "/login", to: "users#login"
   
   get "/myself", to:  "users#myself"
+
+  patch "/myself", to: "users#update"
+
+  post "/myself", to: "user#create"
   
   resources :categories
   resources :feedbacks
