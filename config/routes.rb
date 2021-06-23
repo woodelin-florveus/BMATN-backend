@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  
+  post "/login", to: "users#login"
+  
+  
   resources :categories
   resources :feedbacks
   resources :appointments
