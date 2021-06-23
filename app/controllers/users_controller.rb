@@ -21,4 +21,17 @@ class UsersController < ApplicationController
         @user = User.first
         render json: @user
     end
+
+    # GET / myself
+
+    def myself 
+        #check users token from the request
+        # if token is valid use it to find user from the database
+        # otherwise send an error message
+
+        @user = User.first
+        render json: @user
+    end
+
+
 end
