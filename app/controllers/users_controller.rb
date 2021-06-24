@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+    before_action :authenticate, only: [:myself, :update]
+
     def index
         @users = User.all
 
@@ -24,36 +27,54 @@ class UsersController < ApplicationController
         render json: @user
     end
 
+    def signup
+        # get user info from form
+        # create a user database (user.create)
+        # render json
+
+        @user_params = params.permit(:email, :name, :profile_image, :password)
+
+        # @current_user.create(name: params[:name], email: params[:email], profile_image: params[:profile_image])
+        @user = User.create(@user_params)
+
+        # @user.erros.full_messages
+
+        if @user.valid?
+
+        render json: @user, status: :created
+
+        else 
+
+        render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+
+        end
+    end
+
     # GET / myself
     #authenticate 
 
     def myself 
-        #check users token from the request
-        # if token is valid use it to find user from the database
-        # otherwise send an error message
-
-        @user = User.first
-        render json: @user
+        render json: @current_user
     end
 
 
     #authenticate
     def update 
-        @user = User.first
+        # byebug
+        @current_user.update(name: params[:name], email: params[:email], profile_image: params[:profile_image])
 
-        @user.update(name: params[:name], email: params[:email])
+        render json: @current_user
 
-        render json: @user
     end
 
     #authenticate
     #photo >- user
 
-    def create
-        @user = User.first
-        @user.create( name: params[:name], email: params [:email], profile_image: params[:profile_image])
-        render json: @user
-    end
+    # def create
+    #     @user = User.first
+    #     @user.create( name: params[:name], email: params [:email], profile_image: params[:profile_image])
+    #     render json: @user
+    # end
 
 
 end
