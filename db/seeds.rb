@@ -21,11 +21,13 @@ user_3 = User.create(name:"Britney", profile_image: "https://www.clubshula.com/w
 user_4 = User.create(name:"Alice", profile_image: "https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2637.jpg", email:"Sam@yahoo.com", password:"abc123")
 
 trainer_1 = Trainer.create(name:"Kevin", image:"https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2637.jpg", bio:"hello ready and willing to train", booked:false, rating: 1)
-trainer_2 = Trainer.create(name:"Ashley", image: "https://acefitnessmediastorage.blob.core.windows.net/acepublicfiles/88e16377-3513-427f-bbc8-610c43704409.jpg", bio:"hello ready and willing to train", booked:true, rating: 1)
-trainer_3 = Trainer.create(name:"Sam", image:"https://acefitnessmediastorage.blob.core.windows.net/acepublicfiles/88e16377-3513-427f-bbc8-610c43704409.jpg", bio:"hello ready and willing to train", booked:false, rating: 1)
+trainer_2 = Trainer.create(name:"Devin", image:"https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2637.jpg", bio:"hello ready and willing to train", booked:false, rating: 1)
+trainer_3 = Trainer.create(name:"Ashley", image: "https://acefitnessmediastorage.blob.core.windows.net/acepublicfiles/88e16377-3513-427f-bbc8-610c43704409.jpg", bio:"hello ready and willing to train", booked:true, rating: 1)
+trainer_4 = Trainer.create(name:"Sam", image:"https://acefitnessmediastorage.blob.core.windows.net/acepublicfiles/88e16377-3513-427f-bbc8-610c43704409.jpg", bio:"hello ready and willing to train", booked:false, rating: 1)
 
 appointment_1 = Appointment.create(trainer_id: trainer_1.id, user_id:user_1.id, location: "brooklyn", date: DateTime.new(2021, 8, 29, 22, 35, 0))
 appointment_2 = Appointment.create(trainer_id: trainer_2.id, user_id:user_2.id, location: "bushwick", date: DateTime.new(2021, 8, 29, 22, 35, 0))
+appointment_3 = Appointment.create(trainer_id: trainer_3.id, user_id:user_3.id, location: "Manhattan", date: DateTime.new(2021, 8, 29, 22, 35, 0))
 
 
 feedback_1 = Feedback.create(content:"great trainer helped with my cardio", trainer_id: trainer_1.id, user_id: user_1.id)
