@@ -20,6 +20,8 @@ gem 'active_model_serializers', '~> 0.10.0'
 
 gem 'activerecord-reset-pk-sequence'
 
+gem 'momentjs-rails'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

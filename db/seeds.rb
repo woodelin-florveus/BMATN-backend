@@ -13,21 +13,21 @@ Appointment.reset_pk_sequence
 Feedback.reset_pk_sequence
 
 
-
+time = Time.new
 
 user_1 = User.create(name:"Woodelin", profile_image: "https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2637.jpg", email:"Woodelin@yahoo.com", password:"abc123")
 user_2 = User.create(name:"Brian", profile_image: "https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2637.jpg", email:"Kevin@yahoo.com", password:"abc123")
 user_3 = User.create(name:"Britney", profile_image: "https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2637.jpg", email:"Ashley@yahoo.com", password:"abc123")
 user_4 = User.create(name:"Alice", profile_image: "https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2637.jpg", email:"Sam@yahoo.com", password:"abc123")
 
-trainer_1 = Trainer.create(name:"Kevin", image:"https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2637.jpg", bio:"hello ready and willing to train", booked:false, rating: 1)
-trainer_2 = Trainer.create(name:"Devin", image:"https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2637.jpg", bio:"hello ready and willing to train", booked:false, rating: 1)
-trainer_3 = Trainer.create(name:"Ashley", image: "https://acefitnessmediastorage.blob.core.windows.net/acepublicfiles/88e16377-3513-427f-bbc8-610c43704409.jpg", bio:"hello ready and willing to train", booked:true, rating: 1)
-trainer_4 = Trainer.create(name:"Sam", image:"https://acefitnessmediastorage.blob.core.windows.net/acepublicfiles/88e16377-3513-427f-bbc8-610c43704409.jpg", bio:"hello ready and willing to train", booked:false, rating: 1)
+trainer_1 = Trainer.create(name:"Kevin", image:"https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2672.jpg", bio:"What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?", booked:false, rating: 1)
+trainer_2 = Trainer.create(name:"Devin", image:"https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2637.jpg", bio:"What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?", booked:false, rating: 1)
+trainer_3 = Trainer.create(name:"Ashley", image: "https://www.clubshula.com/wp-content/uploads/2018/02/Shulas-Photoshoot-09.png", bio:"What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?", booked:true, rating: 1)
+trainer_4 = Trainer.create(name:"Sam", image:"https://www.clubshula.com/wp-content/uploads/2018/02/IMG_2625.jpg", bio:"What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?", booked:false, rating: 1)
 
-appointment_1 = Appointment.create(trainer_id: trainer_1.id, user_id:user_1.id, location: "brooklyn", date: DateTime.new(2021, 8, 29, 22, 35, 0))
-appointment_2 = Appointment.create(trainer_id: trainer_2.id, user_id:user_2.id, location: "bushwick", date: DateTime.new(2021, 8, 29, 22, 35, 0))
-appointment_3 = Appointment.create(trainer_id: trainer_3.id, user_id:user_3.id, location: "Manhattan", date: DateTime.new(2021, 8, 29, 22, 35, 0))
+appointment_1 = Appointment.create(trainer_id: trainer_1.id, user_id:user_1.id, location: "brooklyn", date: DateTime.strptime("07/19/2021 08:00", "%m/%d/%Y %H:%M"))
+appointment_2 = Appointment.create(trainer_id: trainer_2.id, user_id:user_2.id, location: "bushwick", date: DateTime.strptime("07/19/2021 08:00", "%m/%d/%Y %H:%M"))
+appointment_3 = Appointment.create(trainer_id: trainer_3.id, user_id:user_3.id, location: "Manhattan", date: DateTime.strptime("07/19/2021 08:00","%m/%d/%Y %H:%M"))
 
 
 feedback_1 = Feedback.create(content:"great trainer helped with my cardio", trainer_id: trainer_1.id, user_id: user_1.id)

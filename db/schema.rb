@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_06_15_224617) do
     t.integer "user_id"
     t.string "location"
     t.date "date"
-    t.datetime "time"
+    t.time "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
