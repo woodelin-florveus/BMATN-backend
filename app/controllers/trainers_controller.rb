@@ -10,4 +10,10 @@ class TrainersController < ApplicationController
 
         render json: @trainer
     end
+
+
+
+
+
+
 end

@@ -4,6 +4,13 @@ class AppointmentsController < ApplicationController
         @appointments = Appointment.all
 
         render json: @appointments
+
+        ########################
+
+        # @appointments = Appointment.where(user_id: 1)
+        # @appointments = @appointments.map{|item| item.trainer}
+
+        # render json: @appointments
     end
 
     def show 
@@ -30,7 +37,7 @@ class AppointmentsController < ApplicationController
 
     def update
 
-        byebug
+      
 
         @appointment = Appointment.find(params[:id])
 
