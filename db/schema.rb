@@ -18,7 +18,8 @@ ActiveRecord::Schema.define(version: 2021_06_15_224617) do
   create_table "appointments", force: :cascade do |t|
     t.integer "trainer_id"
     t.integer "user_id"
-    t.string "location"
+    t.string "trainer_location"
+    t.string "trainer_name"
     t.date "date"
     t.time "time"
     t.datetime "created_at", precision: 6, null: false
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_06_15_224617) do
     t.boolean "booked"
     t.integer "rating"
     t.string "bio"
+    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

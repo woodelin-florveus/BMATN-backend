@@ -6,6 +6,7 @@ class CreateTrainers < ActiveRecord::Migration[6.1]
       t.boolean :booked
       t.integer :rating
       t.string :bio
+      t.string :location
 
       t.timestamps
     end

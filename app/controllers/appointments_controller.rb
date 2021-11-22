@@ -21,7 +21,7 @@ class AppointmentsController < ApplicationController
 
     def create
         # byebug
-        @appointment = Appointment.create(trainer_id: params[:trainer_id], location: params[:location], date: params[:date], time: params[:time], user_id: params[:user_id])
+        @appointment = Appointment.create(trainer_id: params[:trainer_id], trainer_name: params[:trainer_name], trainer_location: params[:location], date: params[:date], user_id: params[:user_id])
 
         render json: @appointment
     end
@@ -41,7 +41,7 @@ class AppointmentsController < ApplicationController
 
         @appointment = Appointment.find(params[:id])
 
-        @appointment.update(trainer_id: params[:trainer_id], date: params[:date], user_id: params[:user_id])
+        @appointment.update(id: params[:id], date: params[:date], user_id: params[:user_id])
 
         render json: @appointment
     end

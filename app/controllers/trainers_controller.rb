@@ -11,6 +11,29 @@ class TrainersController < ApplicationController
         render json: @trainer
     end
 
+    def destroy
+
+        byebug
+     
+        @trainer = Trainer.destroy(params[:id])
+
+        render json: @trainer
+
+    end
+
+    def update
+
+       
+
+        @trainer = Trainer.find(params[:id])
+
+        # byebug
+
+        @trainer.appointments.update(date: params[:date], user_id: params[:user_id])
+
+        render json: @trainer
+    end
+
 
 
 

@@ -1,8 +1,8 @@
 class AppointmentSerializer < ActiveModel::Serializer
-  attributes :id, :trainer_id, :location, :date
+  attributes :id, :trainer_id, :trainer_name, :trainer_location, :date
 
 
-  # has_many :trainer
+
 
 
 end
